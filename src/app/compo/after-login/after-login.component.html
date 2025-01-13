@@ -1,0 +1,214 @@
+<form id="maindetails">
+    <div class="pdetails">
+        <div class="heading">Personal Details</div>
+        <div class="field">
+            <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-label>Your Name </mat-label>
+                    <input matInput name="userName" [(ngModel)]="model.userName" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Fathers Name</mat-label>
+                    <input matInput name="fatherName" [(ngModel)]="model.fatherName" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Mother Name</mat-label>
+                    <input matInput name="motherName" [(ngModel)]="model.motherName" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Age</mat-label>
+                    <input matInput type="number" name="userAge" [(ngModel)]="model.userAge" min="1" max="120" required>
+                </mat-form-field>
+            </div>
+            <div class="row2">
+                <mat-form-field class="date responsive-date" appearance="outline">
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput type="date" name="userDob"
+                        [(ngModel)]="model.userDob" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput name="userMob" [(ngModel)]="model.userMob" type="number" required>
+                    <mat-error>Phone No is <strong>required</strong></mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput name="userEmail" [(ngModel)]="model.userEmail" [formControl]="emailFormControl">
+                    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                    <mat-error>Please enter a valid email address</mat-error>
+                    }
+                    @if (emailFormControl.hasError('required')) {
+                    <mat-error>Email is <strong>required</strong></mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <mat-select name="userGender" [(ngModel)]="model.userGender" style="color: white;" required>
+                        <mat-option value="Male">Male</mat-option>
+                        <mat-option value="Female">Female</mat-option>
+                        <mat-option value="Other">Other</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="row3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Cast</mat-label>
+                    <input matInput name="userCast" [(ngModel)]="model.userCast" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Adhar Number</mat-label>
+                    <input matInput name="userAdhar" [(ngModel)]="model.userAdhar" type="number" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nationality</mat-label>
+                    <input matInput name="userNationlity" [(ngModel)]="model.userNationlity" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Occupation</mat-label>
+                    <mat-select name="userOccup" [(ngModel)]="model.userOccup" style="color: white;" required>
+                        <mat-option value="Student">Student</mat-option>
+                        <mat-option value="Farmer">Farmer</mat-option>
+                        <mat-option value="Other">Other</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="addres">
+        <div class="heading">Address Details</div>
+        <div class="field">
+            <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-label>Village</mat-label>
+                    <input matInput name="userVillage" [(ngModel)]="model.userVillage" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>District</mat-label>
+                    <input matInput name="userDist" [(ngModel)]="model.userDist" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Taluka</mat-label>
+                    <input matInput name="userTq" [(ngModel)]="model.userTq" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input matInput name="userState" [(ngModel)]="model.userState" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Pincode</mat-label>
+                    <input matInput name="userPincode" [(ngModel)]="model.userPincode" type="number" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Pan Card No.</mat-label>
+                    <input matInput name="userPan" [(ngModel)]="model.userPan" required>
+                </mat-form-field>
+            </div>
+            <div class="row2">
+                <!-- <mat-form-field>
+                    <mat-label>Pincode</mat-label>
+                    <input matInput name="userPincode" [(ngModel)]="model.userPincode">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Pan Card No.</mat-label>
+                    <input matInput name="userPan" [(ngModel)]="model.userPan">
+                </mat-form-field> -->
+            </div>
+        </div>
+    </div>
+
+</form>
+<div class="responsive-main">
+    <div class="responsive-inner">
+        <label>
+            <span> Your Name : </span>
+            <input type="text" placeholder="Enter Full Name" [(ngModel)]="model.userName" required>
+        </label>
+        <label>
+            <span> Fathers Name : </span>
+            <input type="text" placeholder="Enter Father Name" name="fatherName" [(ngModel)]="model.fatherName" required>
+        </label>
+        <label>
+            <span> Mother Name : </span>
+            <input type="text" placeholder="Enter Mother Name" name="motherName" [(ngModel)]="model.motherName" required>
+        </label>
+        <label>
+            <span> Age: </span>
+            <input type="number" placeholder="Enter Age " name="userAge" [(ngModel)]="model.userAge">
+        </label>
+        <label>
+            <span>Date Of Birth : </span>
+            <input type="date" name="userDob" [(ngModel)]="model.userDob" required>
+        </label>
+        <label>
+            <span> Mobile Number : </span>
+            <input type="number" placeholder="Enter Mobile Number" [(ngModel)]="model.userMob" required>
+        </label>
+        <label>
+            <span> Email : </span>
+            <input type="email" placeholder="Enter Email" [formControl]="emailFormControl" name="userEmail"
+                [(ngModel)]="model.userEmail" required>
+        </label>
+        <label>
+            <span> Gender: </span>
+
+            <select name="userGender" [(ngModel)]="model.userGender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </label>
+        <label for="">
+            <span> Cast : </span>
+            <input type="text" placeholder="Enter" name="userCast" [(ngModel)]="model.userCast" required>
+        </label>
+        <label>
+            <span> Adhar Number : </span>
+            <input type="number" placeholder="Enter" name="userAdhar" [(ngModel)]="model.userAdhar" required>
+        </label>
+
+        <label>
+            <span> Nationality : </span>
+            <input type="text" placeholder="Enter" name="userNationlity" [(ngModel)]="model.userNationlity" required>
+        </label>
+        <label>
+            <span> Occupation : </span>
+            <input type="text" placeholder="Enter" name="userOccup" [(ngModel)]="model.userOccup" required>
+        </label>
+        <label>
+            <span> Village : </span>
+            <input type="text" placeholder="Enter" name="userVillage" [(ngModel)]="model.userVillage" required>
+        </label>
+        <label>
+            <span> District : </span>
+            <input type="text" placeholder="Enter" name="userDist" [(ngModel)]="model.userDist" required>
+        </label>
+        <label>
+            <span> Taluka : </span>
+            <input type="text" placeholder="Enter" name="userTq" [(ngModel)]="model.userTq" required>
+        </label>
+        <label>
+            <span> State : </span>
+            <input type="text" placeholder="Enter" name="userState" [(ngModel)]="model.userState" required>
+        </label>
+        <label>
+            <span> Pincode : </span>
+            <input type="number" placeholder="Enter" name="userPincode" [(ngModel)]="model.userPincode" required>
+        </label>
+        <label>
+            <span> Pan Card No : </span>
+            <input type="text" placeholder="Enter" name="userPan" [(ngModel)]="model.userPan" required>
+        </label>
+    </div>
+</div>
+
+
+<button type="submit" (click)="SubmitData()">Submit</button>
+
+
+<!-- <pre>{{ model | json }}</pre> -->

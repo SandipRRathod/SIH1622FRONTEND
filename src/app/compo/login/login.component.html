@@ -1,0 +1,63 @@
+
+
+<div class="main">
+    <h1>Login</h1>
+    <form>
+        <div class="Action-button">
+            <input class="userType"  type="button" value="User" (click)="userType = 'User'" [class.active]="userType === 'User'"/>
+            <input class="userType" type="button" value="Admin" (click)="userType = 'Admin'" [class.active]="userType === 'Admin'"/>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput name="userEmailOrPhone" [(ngModel)]="data.userEmailOrPhone"
+                    (ngModelChange)="validateInput()" placeholder="Phone/Email" required />
+                <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput name="userPassword" [(ngModel)]="data.userPassword" required>
+            </mat-form-field>
+        </div>
+
+
+        <button type="button" (click)="login()">Login</button><br>
+        <p>
+            Don't have an account? <a routerLink="/register">Register</a>
+        </p>
+       <div class="forget"> <p>Forgot Username ?<a routerLink="/changeusername">Click Me</a></p>
+        <p>Forgot Password ?<a routerLink="/changepass">Click Here</a></p></div>
+    </form>
+</div>
+<br><br>
+<div class="responsive-main">
+
+
+    <div class="responsive-inner">
+        <h1>Login</h1>
+        <div class="Action-button">
+            <input class="userType" class="" type="button" value="User" (click)="userType = 'User'" [class.active]="userType === 'User'"/>
+            <input class="userType" type="button" value="Admin" (click)="userType = 'Admin'" [class.active]="userType === 'Admin'"/>
+            <!-- {{userType}} -->
+        </div>
+        <label>
+            <p> Username : </p>
+            <input type="text" placeholder="Enter Username" [(ngModel)]="data.userEmailOrPhone" required>
+        </label>
+        <label>
+            <p> Password : </p>
+            <input type="text" placeholder="Enter Password" [(ngModel)]="data.userPassword" required>
+        </label>
+
+        <button type="button" (click)="login()">Login</button><br>
+        <p>Don't have an account? <a routerLink="/register">Register</a></p><br>
+        <div class="forget"> <p>Forgot Username ?<a routerLink="/changeusername">Click Me</a></p>
+            <p>Forgot Password ?<a routerLink="/changepass">Click Here</a></p></div>
+    </div>
+
+</div>
+
+
+

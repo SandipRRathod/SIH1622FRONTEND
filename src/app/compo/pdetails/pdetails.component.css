@@ -1,0 +1,295 @@
+.user-name {
+   font-size: 20px;
+   position: relative;
+   right: 10px;
+   bottom: 5px;
+}
+
+mat-icon {
+   color: rgb(114, 114, 235);
+}
+
+.pdetails {
+   border: 1px solid rgb(249, 249, 249);
+   background: transparent;
+   border-radius: 10px;
+}
+
+.pdetails .heading {
+   border: 1px solid rgb(223, 187, 187);
+   border-radius: 10px;
+   border-bottom-right-radius: 0px;
+   border-bottom-left-radius: 0px;
+   height: 35px;
+   font-size: 20px;
+   padding-top: 13px;
+   padding-left: 20px;
+   text-align: start;
+}
+
+.pdetails .field {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: column;
+   padding: 20px;
+}
+
+
+.pdetails .field .row1,
+.row2,
+.row3 {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   flex-direction: row;
+   color: rgb(219, 183, 183);
+}
+
+.pdetails .field .row1 input,
+.row2 input,
+.row3 input {
+   color: rgb(244, 244, 155);
+}
+
+.addres {
+   margin-top: 10px;
+   border: 1px solid rgb(227, 192, 192);
+border-radius: 10px;
+}
+
+.addres .heading {
+   border: 1px solid rgb(236, 218, 218);
+   border-radius: 10px;
+   border-bottom-right-radius: 0px;
+   border-bottom-left-radius: 0px;
+   height: 35px;
+   font-size: 20px;
+   padding-top: 13px;
+   padding-left: 20px;
+   text-align: start;
+}
+
+.addres .field {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: column;
+   padding: 20px;
+   /* background-color: rgb(232, 232, 227); */
+}
+
+.addres .field .row1,
+.row2 {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   flex-direction: row;
+}
+
+.addres .field .row1 input,
+.row2 input {
+   color: rgb(244, 244, 155);
+}
+
+.color {
+   color: rgb(249, 228, 200);
+}
+
+
+.responsive-main {
+   display: none;
+}
+
+.responsive-main .responsive-inner {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   margin: auto;
+   padding: 20px;
+   gap: 15px;
+   border: 2px solid rgb(168, 138, 102);
+   border-radius: 10px;
+}
+
+.responsive-main .responsive-inner label {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.responsive-main .responsive-inner label span {
+   font-size: 20px;
+}
+
+.responsive-main .responsive-inner label input {
+   width: 60%;
+   padding: 10px;
+   font-size: 20px;
+   outline: none;
+   border-radius: 5px;
+   border: none;
+   background-color: white;
+   color: black;
+}
+
+@media screen and (min-width:200px) and (max-width:480px) {
+
+   #maindiv {
+      display: none;
+   }
+
+   .user-name {
+      font-size: 55px;
+   }
+
+   mat-icon {
+      font-size: 55px;
+      height: 55px;
+      width: 55px;
+      margin-top: 3%;
+   }
+
+   .pdetails .heading,
+   .addres .heading {
+      font-size: 45px;
+      height: 50px;
+      padding-top: 30px;
+      border-radius: 5px;
+   }
+
+
+   .pdetails .field .row1 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+   }
+
+   .pdetails .field .row1 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 8px;
+   }
+
+   .pdetails .field .row1 mat-form-field input {
+      font-size: 38px;
+      margin-top: 20px;
+   }
+
+
+   .pdetails .field .row2 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+   }
+
+   .pdetails .field .row2 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 7px;
+   }
+
+   .pdetails .field .row2 mat-form-field input {
+      font-size: 38px;
+      margin-top: 20px;
+   }
+
+   .pdetails .field .row2 mat-form-field mat-select {
+      height: 70px;
+      font-size: 35px;
+   }
+
+   .pdetails .field .row3 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+   }
+
+   .pdetails .field .row3 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 7px;
+   }
+
+   .pdetails .field .row3 mat-form-field input {
+      font-size: 38px;
+      margin-top: 20px;
+   }
+
+   .pdetails .field .row3 mat-form-field mat-select {
+      height: 70px;
+      font-size: 35px;
+   }
+
+
+
+   .addres .field .row1 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+   }
+
+   .addres .field .row1 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 6px;
+   }
+
+   .addres .field .row1 mat-form-field input {
+      font-size: 38px;
+      margin-top: 20px;
+   }
+
+   .addres .field .row2 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+      /* border: 1px solid gray; */
+   }
+
+   .addres .field .row2 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 6px;
+   }
+
+   .addres .field .row2 mat-form-field input {
+      font-size: 38px;
+      margin-top: 20px;
+   }
+
+
+
+
+   .responsive-main {
+      display: block;
+   }
+
+   .responsive-main .responsive-inner {
+      width: 90%;
+      gap: 20px;
+   }
+
+   .responsive-main .responsive-inner label span {
+      font-size: 50px;
+   }
+
+   .responsive-main .responsive-inner label input {
+      width: 60%;
+      height: 85px;
+      font-size: 50px;
+      padding: 5px;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+   }
+
+
+
+
+}

@@ -1,0 +1,214 @@
+<div class="name">
+    <strong><i><span class="user-name">Hello, {{ profileData.userName
+                }}</span><mat-icon>verified</mat-icon></i></strong>
+</div><br>
+<div id="maindiv">
+    <div class="pdetails">
+        <div class="heading">Personal Details</div>
+        <div class="field">
+            <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Your Name</mat-label>
+                    <input matInput [value]="profileData.userName" readonly>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Fathers Name</mat-label>
+                    <input matInput [value]="profileData.fatherName" readonly>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Mother Name</mat-label>
+                    <input matInput [value]="profileData.motherName" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Age</mat-label>
+                    <input matInput [value]="profileData.userAge" readonly>
+                </mat-form-field>
+            </div>
+            <div class="row2">
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Date Of Birth</mat-label>
+                    <input matInput [value]="profileData.userDob" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Mobile Number</mat-label>
+                    <input matInput [value]="profileData.userMob" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Email</mat-label>
+                    <input matInput [value]="profileData.userEmail" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Gender</mat-label>
+                    <input matInput [value]="profileData.userGender" readonly>
+                </mat-form-field>
+            </div>
+
+            <div class="row3">
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Cast</mat-label>
+                    <input matInput [value]="profileData.userCast" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Adhar Number</mat-label>
+                    <input matInput [value]="profileData.userAdhar" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Nationality</mat-label>
+                    <input matInput [value]="profileData.userNationlity" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Occupation</mat-label>
+                    <input matInput [value]="profileData.userOccup" readonly>
+                </mat-form-field>
+            </div>
+            <!-- <div>
+            <mat-form-field>
+                <mat-label>Pan Card No.</mat-label>
+                <input matInput value=" " readonly>
+            </mat-form-field>
+           </div> -->
+        </div>
+    </div>
+
+    <div class="addres">
+        <div class="heading">Address Details</div>
+        <div class="field">
+            <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Village</mat-label>
+                    <input matInput [value]="profileData.userVillage" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">District</mat-label>
+                    <input matInput [value]="profileData.userDist" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Taluka</mat-label>
+                    <input matInput [value]="profileData.userTq" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">State</mat-label>
+                    <input matInput [value]="profileData.userState" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Pincode</mat-label>
+                    <input matInput [value]="profileData.userPincode" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label class="color">Pan Card No.</mat-label>
+                    <input matInput [value]="profileData.userPan" readonly>
+                </mat-form-field>
+            </div>
+            <!-- <div class="row2">
+                <mat-form-field>
+                    <mat-label>Pincode</mat-label>
+                    <input matInput value=" " readonly>
+                </mat-form-field>
+                <mat-form-field>
+                <mat-label>Pan Card No.</mat-label>
+                <input matInput value=" " readonly>
+            </mat-form-field></div> -->
+        </div>
+    </div>
+</div><br><br>
+
+<div class="responsive-main">
+    <div class="responsive-inner">
+
+        <label>
+            <span>Your Name :</span>
+            <input [value]="profileData.userName" readonly>
+        </label>
+
+        <label for="">
+            <span>Father Name :</span>
+            <input [value]="profileData.fatherName" readonly>
+        </label>
+
+        <label for="">
+            <span>Mother Name :</span>
+            <input [value]="profileData.motherName" readonly>
+        </label>
+
+        <label for="">
+            <span>Age :</span>
+            <input [value]="profileData.userAge" readonly>
+        </label>
+
+        <label for="">
+            <span>DOB :</span>
+            <input [value]="profileData.userDob" readonly>
+        </label>
+
+        <label for="">
+            <span>Mobile No :</span>
+            <input [value]="profileData.userMob" readonly>
+        </label>
+
+        <label for="">
+            <span>Email Id :</span>
+            <input [value]="profileData.userEmail" readonly>
+        </label>
+
+        <label for="">
+            <span>Gender :</span>
+            <input [value]="profileData.userGender" readonly>
+        </label>
+
+        <label for="">
+            <span>Caste :</span>
+            <input [value]="profileData.userCast" readonly>
+        </label>
+
+        <label for="">
+            <span>Adhar :</span>
+            <input [value]="profileData.userAdhar" readonly>
+        </label>
+
+        <label for="">
+            <span>Nationlity :</span>
+            <input [value]="profileData.userNationlity" readonly>
+        </label>
+
+        <label for="">
+            <span>Occupation :</span>
+            <input [value]="profileData.userOccup" readonly>
+        </label>
+
+        <label for="">
+            <span>Village :</span>
+            <input [value]="profileData.userVillage" readonly>
+        </label>
+
+        <label for="">
+            <span>District :</span>
+            <input [value]="profileData.userDist" readonly>
+        </label>
+
+        <label for="">
+            <span>Taluka :</span>
+            <input [value]="profileData.userTq" readonly>
+        </label>
+
+        <label for="">
+            <span>State </span>
+            <input [value]="profileData.userState" readonly>
+        </label>
+
+        <label for="">
+            <span>Pincode :</span>
+            <input [value]="profileData.userPincode" readonly>
+        </label>
+
+        <label for="">
+            <span>PanCard :</span>
+            <input [value]="profileData.userPan" readonly>
+        </label>
+
+
+    </div>
+
+</div>

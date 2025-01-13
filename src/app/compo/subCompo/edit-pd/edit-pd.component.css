@@ -1,0 +1,333 @@
+.pdetails {
+   border: 1px solid gray;
+}
+
+.pdetails .heading {
+   border: 1px solid gray;
+   height: 35px;
+   font-size: 20px;
+   padding-top: 13px;
+   padding-left: 20px;
+   text-align: start;
+}
+
+.pdetails .field {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   flex-wrap: wrap;
+   padding: 20px;
+}
+
+.pdetails .field .row1,
+.row2,
+.row3 {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   flex-direction: row;
+   color: whitesmoke;
+}
+
+.pdetails .field .row1 input,
+.row2 input,
+.row3 input {
+
+   color: whitesmoke;
+}
+
+.pdetails .field .row1 mat-label,
+.row2 mat-label,
+.row3 mat-label {
+
+   color: whitesmoke;
+}
+
+.date {
+   width: 21%;
+}
+
+.addres {
+   margin-top: 10px;
+   border: 1px solid gray;
+
+}
+
+.addres .heading {
+   border: 1px solid gray;
+   height: 35px;
+   font-size: 20px;
+   padding-top: 13px;
+   padding-left: 20px;
+   text-align: start;
+}
+
+.addres .field {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: column;
+   padding: 20px;
+}
+
+.addres .field .row1,
+.row2 {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   flex-direction: row;
+}
+
+.addres .field .row1 input,
+.row2 input,
+.row3 input {
+
+   color: whitesmoke;
+}
+
+.addres .field .row1 mat-label,
+.row2 mat-label,
+.row3 mat-label {
+
+   color: whitesmoke;
+}
+
+button {
+   margin: 10px;
+   width: 20%;
+   height: 40px;
+   font-size: 20px;
+   border: none;
+   border-radius: 7px;
+   font-weight: bold;
+}
+
+button:hover {
+   background-color: rgb(211, 153, 153);
+   color: white;
+}
+
+.responsive-main {
+   display: none;
+}
+
+.responsive-main .responsive-inner {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   margin: auto;
+   padding: 20px;
+   gap: 15px;
+   border: 2px solid rgb(168, 138, 102);
+   border-radius: 10px;
+}
+
+.responsive-main .responsive-inner label {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.responsive-main .responsive-inner label span {
+   font-size: 20px;
+}
+
+.responsive-main .responsive-inner label input {
+   width: 60%;
+   padding: 10px;
+   font-size: 20px;
+   outline: none;
+   border-radius: 5px;
+   border: none;
+   background-color: white;
+   color: black;
+}
+
+
+
+@media screen and (min-width:200px) and (max-width:480px) {
+
+   #maindetails {
+      display: none;
+   }
+
+   .pdetails .heading,
+   .addres .heading {
+      font-size: 45px;
+      height: 50px;
+      padding-top: 30px;
+      border-radius: 5px;
+   }
+
+   .pdetails .field .row1,
+   .row2,
+   .row3 {
+      width: 98%;
+      flex-direction: column;
+   }
+
+   .pdetails .field .row1 mat-form-field {
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+      width: 99%;
+   }
+
+   .pdetails .field .row1 mat-form-field mat-label {
+      font-size: 60px;
+   }
+
+   .pdetails .field .row1 mat-form-field input {
+      font-size: 60px;
+      margin-top: 18px;
+      width: 100%;
+      height: 100px;
+   }
+
+   .pdetails .field .row2 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+   }
+
+   .pdetails .field .row2 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .pdetails .field .row2 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   .pdetails .field .row2 mat-form-field mat-error {
+      font-size: 30px;
+      margin-top: 12px;
+   }
+
+
+   .pdetails .field .row2 mat-form-field mat-select {
+      height: 70px;
+      font-size: 35px;
+      position: relative;
+      top: 25px;
+   }
+
+   mat-option {
+      font-size: 35px;
+      margin-top: 10px;
+      padding: 10px;
+   }
+
+   .pdetails .field .row3 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+
+   }
+
+   .pdetails .field .row3 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .pdetails .field .row3 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   .pdetails .field .row3 mat-form-field mat-select {
+      height: 70px;
+      font-size: 35px;
+      position: relative;
+      top: 24px;
+   }
+
+
+   .addres .field .row1 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+   }
+
+   .addres .field .row1 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .addres .field .row1 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   .addres .field .row2 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+
+   }
+
+   .addres .field .row2 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .addres .field .row2 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   mat-datepicker-toggle {
+      visibility: hidden;
+   }
+
+
+   button {
+      font-size: 70px;
+      height: 100px;
+      margin-top: 4%;
+      width: 50%;
+      border-radius: 30px;
+   }
+
+   button:hover {
+      background-color: rgb(211, 153, 153);
+      color: white;
+   }
+
+   h2{
+      margin: 3%;
+      font-size: 60px;
+   }
+   .responsive-main {
+      display: block;
+   }
+
+   .responsive-main .responsive-inner {
+      width: 90%;
+      gap: 20px;
+   }
+
+   .responsive-main .responsive-inner label span {
+      font-size: 50px;
+   }
+
+   .responsive-main .responsive-inner label input {
+      width: 60%;
+      height: 55px;
+      font-size: 50px;
+      padding: 20px;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+   }
+
+}

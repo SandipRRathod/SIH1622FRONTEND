@@ -1,0 +1,144 @@
+.main {
+   border: 1px solid rgb(255, 255, 255);
+   width: 45%;
+   margin: auto;
+   border-radius: 10px;
+   margin-top: 22px;
+   margin-bottom: -30px;
+}
+
+form {
+   padding: 10px;
+}
+
+form div mat-form-field {
+   width: 70%;
+
+}
+
+button{
+   height: 25px;
+   width: fit-content;
+   font-style: italic;
+   font-weight: bolder;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   border: none;
+}
+
+button{
+   font-size: 17px;
+   width: 20%;
+   height: 30px;
+ }
+  
+ button:hover{
+    background-color: rgb(183, 149, 125);
+    color: white;
+ }
+form div mat-form-field input {
+   color: whitesmoke;
+   background: transparent;
+}
+
+form p a{
+   color: rgb(196, 40, 227);
+}
+
+form div mat-form-field mat-label {
+   color: whitesmoke;
+   background: transparent;
+}
+
+.responsive-main {
+   display: none;
+}
+
+
+
+.responsive-inner {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   margin: auto;
+   padding: 20px;
+   gap: 15px;
+   border: 2px solid rgb(168, 138, 102);
+   border-radius: 10px;
+}
+
+.responsive-inner label p {
+   font-size: 20px;
+   display: flex;
+   margin-left: 13%;
+}
+
+.responsive-inner input {
+   width: 85%;
+   padding: 10px;
+   font-size: 20px;
+   box-sizing: border-box;
+   outline: none;
+   margin: auto;
+   border-radius: 5px;
+   border: none;
+}
+
+@media screen and (min-width:200px) and (max-width:480px) {
+
+   .main {
+      display: none;
+   }
+
+   .responsive-main {
+      display: block;
+   }
+
+   .responsive-inner {
+      width: 85%;
+      gap: 20px;
+      border-width: 5px;
+      border-radius: 20px;
+      margin-top: 10%;
+   }
+
+   .responsive-inner label p {
+      font-size: 55px;
+      margin-top: 5%;
+   }
+
+   .responsive-inner input {
+      height: 125px;
+      font-size: 50px;
+      padding: 20px;
+      font-weight: bold;
+      background: none;
+      border-radius: 10px;
+      color: rgb(10, 0, 0);
+      background-color: rgb(255, 255, 255);
+      margin-top: 3%;
+   }
+
+   .responsive-inner button {
+      font-size: 50px;
+      height: 90px;
+      width: 35%;
+      margin: auto;
+      border-radius: 20px;
+      margin-top: 10%;
+   }
+
+   .responsive-inner p {
+      font-size: 40px;
+   }
+
+   .responsive-inner p a{
+      color: rgb(196, 40, 227);
+
+   }
+   .responsive-inner h1 {
+      margin-top: 6%;
+      font-weight: bold;
+      font-size: 75px;
+   }
+}

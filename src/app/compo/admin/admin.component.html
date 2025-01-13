@@ -1,0 +1,353 @@
+<h1 style="font-weight: bold; font-style: oblique;"><mat-icon>stars</mat-icon> <span> Hello Admin Sandip Raju Rathod
+  </span><mat-icon>stars</mat-icon></h1>
+
+<br><br>
+
+
+<h1>Income Applications</h1>
+<table mat-table [dataSource]="dataSourceIncome"  class=" mat-elevation-z8"
+  id="table2">
+
+  <ng-container matColumnDef="column0">
+    <th mat-header-cell *matHeaderCellDef>Certificate status</th>
+    <td mat-cell *matCellDef="let element"> {{element.certiStatus}} </td>
+  </ng-container>
+  <ng-container matColumnDef="column1">
+    <th mat-header-cell *matHeaderCellDef>Application ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.applicationID}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column2">
+    <th mat-header-cell *matHeaderCellDef class="id">Applicant Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.benificaryName}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column3">
+    <th mat-header-cell *matHeaderCellDef> Certificate Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.certiName}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column4">
+    <th mat-header-cell *matHeaderCellDef>Applicant FarmArea</th>
+    <td mat-cell *matCellDef="let element"> {{element.farmArea}}</td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column5">
+    <th mat-header-cell *matHeaderCellDef>Relation</th>
+    <td mat-cell *matCellDef="let element"> {{element.relation}}</td>
+
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column6">
+    <th mat-header-cell *matHeaderCellDef>Solutation</th>
+    <td mat-cell *matCellDef="let element"> {{element.solutation}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column7">
+    <th mat-header-cell *matHeaderCellDef>CertificateReasion</th>
+    <td mat-cell *matCellDef="let element"> {{element.certiReasion}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column8">
+    <th mat-header-cell *matHeaderCellDef>Payment Status</th>
+    <td mat-cell *matCellDef="let element"> {{element.paymentStatus}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column9">
+    <th mat-header-cell *matHeaderCellDef>Farm Holder Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.farmaccHolderName}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column10">
+    <th mat-header-cell *matHeaderCellDef>Area In</th>
+    <td mat-cell *matCellDef="let element"> {{element.area}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column11">
+    <th mat-header-cell *matHeaderCellDef>proofOfIncome</th>
+    <td mat-cell *matCellDef="let element"><button> <a href='{{element.proofOfIncome}}'>View</a></button></td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column12">
+    <th mat-header-cell *matHeaderCellDef>identityProof</th>
+    <td mat-cell *matCellDef="let element"><button> <a href='{{element.identityProof}}'>View</a></button></td>
+
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column13">
+    <th mat-header-cell *matHeaderCellDef>addressProof</th>
+    <td mat-cell *matCellDef="let element"> <button><a href='{{element.addressProof}}'>View</a></button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="column14">
+    <th mat-header-cell *matHeaderCellDef>Application</th>
+    <td mat-cell *matCellDef="let element"> <button (click)="approve(element.applicationID)">Approve</button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="column15">
+    <th mat-header-cell *matHeaderCellDef>Application</th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="toggleReject(element.applicationID)">Reject</button>
+
+      <div *ngIf="rejectedData[element.applicationID]?.isVisible">
+        <!-- Ensure the object exists before binding with ngModel -->
+        <textarea [(ngModel)]="data.rejectionStatus"></textarea>
+        <button (click)="submitRejection(element.applicationID)">Submit</button>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumnsIncome"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumnsIncome;"></tr>
+
+</table>
+
+<br><br>
+<hr>
+
+<h1>Caste Applications</h1>
+<table mat-table [dataSource]="dataSourceCaste" class="mat-elevation-z8" 
+  id="table2">
+
+  <ng-container matColumnDef="column0">
+    <th mat-header-cell *matHeaderCellDef>Certificate status</th>
+    <td mat-cell *matCellDef="let element"> {{element.certiStatus}} </td>
+  </ng-container>
+  <ng-container matColumnDef="column1">
+    <th mat-header-cell *matHeaderCellDef>Application ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.applicationID}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column2">
+    <th mat-header-cell *matHeaderCellDef class="id">Applicant Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.benificaryName}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column3">
+    <th mat-header-cell *matHeaderCellDef> Certificate Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.certiName}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column4">
+    <th mat-header-cell *matHeaderCellDef>Certificate Subtype</th>
+    <td mat-cell *matCellDef="let element"> {{element.casteType}}</td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column5">
+    <th mat-header-cell *matHeaderCellDef>Relation</th>
+    <td mat-cell *matCellDef="let element"> {{element.relation}}</td>
+
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column6">
+    <th mat-header-cell *matHeaderCellDef>Solutation</th>
+    <td mat-cell *matCellDef="let element"> {{element.solutation}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column7">
+    <th mat-header-cell *matHeaderCellDef>Applicatnt Gender</th>
+    <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column8">
+    <th mat-header-cell *matHeaderCellDef>Payment Status</th>
+    <td mat-cell *matCellDef="let element"> {{element.paymentStatus}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column9">
+    <th mat-header-cell *matHeaderCellDef>casteProof</th>
+    <td mat-cell *matCellDef="let element"><button> <a href='{{element.casteProof}}'>View</a></button></td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column10">
+    <th mat-header-cell *matHeaderCellDef>birthProof</th>
+    <td mat-cell *matCellDef="let element"><button> <a href='{{element.birthProof}}'>View</a></button></td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column11">
+    <th mat-header-cell *matHeaderCellDef>identityProof</th>
+    <td mat-cell *matCellDef="let element"><button> <a href='{{element.identityProof}}'>View</a></button></td>
+
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column12">
+    <th mat-header-cell *matHeaderCellDef>addressProof</th>
+    <td mat-cell *matCellDef="let element"> <button><a href='{{element.addressProof}}'>View</a></button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="column13">
+    <th mat-header-cell *matHeaderCellDef>Application</th>
+    <td mat-cell *matCellDef="let element"> <button (click)="approve(element.applicationID)">Approve</button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="column14">
+    <th mat-header-cell *matHeaderCellDef>Application</th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="toggleReject(element.applicationID)">Reject</button>
+
+      <div *ngIf="rejectedData[element.applicationID]?.isVisible">
+        <!-- Ensure the object exists before binding with ngModel -->
+        <textarea [(ngModel)]="data.rejectionStatus"></textarea>
+        <button (click)="submitRejection(element.applicationID)">Submit</button>
+      </div>
+    </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumnsCaste"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumnsCaste;"></tr>
+
+</table>
+<br><br>
+<hr>
+
+<h1>Age Nationality and Domicile Applications</h1>
+
+  <table mat-table [dataSource]="dataSourceANAD" class="mat-elevation-z8"
+  id="table2">
+
+  <ng-container matColumnDef="column0">
+    <th mat-header-cell *matHeaderCellDef>Certificate status</th>
+    <td mat-cell *matCellDef="let element"> {{element.certiStatus}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="column1">
+    <th mat-header-cell *matHeaderCellDef>Application ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.applicationID}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column2">
+    <th mat-header-cell *matHeaderCellDef class="id">Applicant Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.benificaryName}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column3">
+    <th mat-header-cell *matHeaderCellDef> Certificate Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.certiName}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column4">
+    <th mat-header-cell *matHeaderCellDef>Certificate Subtype</th>
+    <td mat-cell *matCellDef="let element"> {{element.certiType}}</td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column5">
+    <th mat-header-cell *matHeaderCellDef>Relation</th>
+    <td mat-cell *matCellDef="let element"> {{element.relation}}</td>
+
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column6">
+    <th mat-header-cell *matHeaderCellDef>Solutation</th>
+    <td mat-cell *matCellDef="let element"> {{element.solutation}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column7">
+    <th mat-header-cell *matHeaderCellDef>Certificate Reasion</th>
+    <td mat-cell *matCellDef="let element"> {{element.certiReasion}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column8">
+    <th mat-header-cell *matHeaderCellDef>Payment Status</th>
+    <td mat-cell *matCellDef="let element"> {{element.paymentStatus}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column9">
+    <th mat-header-cell *matHeaderCellDef>Residing Since</th>
+    <td mat-cell *matCellDef="let element">{{element.residingSince}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="column10">
+    <th mat-header-cell *matHeaderCellDef>birthProof</th>
+    <td mat-cell *matCellDef="let element"><button><a href='{{element.birthProof}}'>View</a></button></td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="column11">
+    <th mat-header-cell *matHeaderCellDef>identityProof</th>
+    <td mat-cell *matCellDef="let element"><button> <a href='{{element.identityProof}}'>View</a></button></td>
+
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="column12">
+    <th mat-header-cell *matHeaderCellDef>addressProof</th>
+    <td mat-cell *matCellDef="let element"> <button><a href='{{element.addressProof}}'>View</a></button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="column13">
+    <th mat-header-cell *matHeaderCellDef>Application</th>
+    <td mat-cell *matCellDef="let element"> <button (click)="approve(element.applicationID)">Approve</button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="column14">
+    <th mat-header-cell *matHeaderCellDef>Application</th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="toggleReject(element.applicationID)">Reject</button>
+
+      <div *ngIf="rejectedData[element.applicationID]?.isVisible">
+        <!-- Ensure the object exists before binding with ngModel -->
+        <textarea [(ngModel)]="data.rejectionStatus"></textarea>
+        <button (click)="submitRejection(element.applicationID)">Submit</button>
+      </div>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumnsANAD"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumnsANAD;"></tr>
+
+</table>
+
+
+<div class="logout-button">
+  <button (click)="logout()">Logout <mat-icon>logout</mat-icon></button>
+</div>

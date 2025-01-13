@@ -1,0 +1,680 @@
+<!-- certificate-form.component.html -->
+<form [formGroup]="certificateForm">
+
+  <mat-form-field appearance="outline" class="main">
+    <mat-label style="color: white;">Certificate Type</mat-label>
+    <mat-select formControlName="certificateType" (selectionChange)="onCertificateTypeChange($event)"
+      style="color: white;">
+      <mat-option value="Select">Select</mat-option>
+      <mat-option value="Income" >Income</mat-option>
+      <mat-option value="Caste" >Caste</mat-option>
+      <mat-option value="Age Nationality and Domicile Certificate" >Age Nationality and
+        Domicile Certificate</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="responsive-main">
+    <select formControlName="certificateType" (change)="onCertificateTypeChange($event)" 
+      style="background-color: transparent;">
+      <option value="-">Select Certificate Type</option>
+      <option value="Income">Income</option>
+      <option value="Caste">Caste</option>
+      <option value="Age Nationality and Domicile Certificate">Age Nationality and Domicile Certificate</option>
+    </select>
+  </div>
+  <br> <br>
+
+  <div *ngIf="certificateForm.get('certificateType')?.value === 'Income'" class="incomeDiv">
+    <div class="headName">
+
+      <mat-form-field appearance="outline">
+        <mat-label style="color: white;">Income For</mat-label>
+        <mat-select [(ngModel)]="IncomeData.incomeFor" name="incomeFor"  [ngModelOptions]="{standalone: true}" aria-required="true" required>
+          <mat-option value="One Year">One Year</mat-option>
+          <mat-option value="Three Year">Three Year</mat-option>
+        </mat-select>
+        
+      </mat-form-field>
+    </div>
+    <div>
+      <div class="incomeDiv-1">
+        <h1 class="headline">Beneficiary Information</h1>
+
+        <div class="incomeDiv-inner1">
+          <mat-form-field appearance="outline">
+            <mat-label>Relation</mat-label>
+            <mat-select [(ngModel)]="IncomeData.relation" name="relation" [ngModelOptions]="{standalone: true}">
+              <mat-option value="Self">Self</mat-option>
+              <mat-option value="Father">Father</mat-option>
+              <mat-option value="Mother">Mother</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Beneficiary Salutation</mat-label>
+            <mat-select [(ngModel)]="IncomeData.solutation" name="salutation" [ngModelOptions]="{standalone: true}">
+              <mat-option value="Shree">Shree</mat-option>
+              <mat-option value="Shreemati">Shreemati</mat-option>
+              <mat-option value="So">So</mat-option>
+            </mat-select>
+           
+          </mat-form-field>
+
+
+
+          <mat-form-field appearance="outline">
+            <mat-label>Beneficiary Name</mat-label>
+            <input matInput [(ngModel)]="IncomeData.benificaryName" name="beneficiaryName"
+              [ngModelOptions]="{standalone: true}"/>
+              
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline">
+            <mat-label>Income Certificate Reason?</mat-label>
+            <mat-select [(ngModel)]="IncomeData.certiReasion" name="certificateReasion"
+              [ngModelOptions]="{standalone: true}">
+              <mat-option value="Shikshan">Shikshan</mat-option>
+              <mat-option value="Vaidyakiya">Vaidyakiya</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
+            <!-- <mat-form-field appearance="outline"> -->
+            <!-- <mat-label>Reason for why Income Certificate Required</mat-label>
+          <input matInput /> -->
+            <!-- </mat-form-field> -->
+          </mat-form-field>
+
+        </div>
+
+      </div>
+
+      <div class="incomeDiv-2">
+        <h1 class="headline">Family Farm Income Details</h1>
+
+        <div class="incomeDiv-inner1">
+          <mat-form-field appearance="outline">
+            <mat-label>Account Holder Name</mat-label>
+            <input matInput [(ngModel)]="IncomeData.farmaccHolderName" name="farmHoldername"
+              [ngModelOptions]="{standalone: true}" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Annual Income Of {{academicYear1}}</mat-label>
+            <input matInput  name="annualIncome" [(ngModel)]="IncomeData.annualIncome"  [ngModelOptions]="{standalone: true}"  />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" *ngIf="IncomeData.incomeFor==='Three Year'">
+            <mat-label>Annual Income {{academicYear2}}</mat-label>
+            <input matInput  name="annualsecondIncome" [(ngModel)]="IncomeData.annualsecondIncome"  [ngModelOptions]="{standalone: true}"  />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" *ngIf="IncomeData.incomeFor==='Three Year'">
+            <mat-label>Annual Income Of {{academicYear3}}</mat-label>
+            <input matInput  name="annualThirdIncome" [(ngModel)]="IncomeData.annualThirdIncome"  [ngModelOptions]="{standalone: true}"  />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Area</mat-label>
+            <input matInput [(ngModel)]="IncomeData.farmArea" name="farmArea" [ngModelOptions]="{standalone: true}" />
+          </mat-form-field>
+
+         
+
+          <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select [(ngModel)]="IncomeData.area" name="areaMeasure" [ngModelOptions]="{standalone: true}">
+              <mat-option value="R">R</mat-option>
+              <mat-option value="Akar">Akar</mat-option>
+              <mat-option value="Gunthe">Gunthe</mat-option>
+              <mat-option value="Hector">Hector</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="incomeDiv-3">
+      <h1 class="headline"> Documents</h1>
+
+      <div class="incomeDiv-inner1">
+
+        <!-- Identity Proof -->
+        <mat-form-field appearance="outline">
+          <mat-label>1) Identity Proof</mat-label>
+          <input matInput [value]="identityProofFileName" placeholder="No file chosen"  required readonly />
+          <button mat-button (click)="identityProofInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #identityProofInput (change)="onFileSelected($event, 'identityProof')"
+          formControlName="identityProof" name="files" style="display: none;" />
+
+        <!-- Address Proof -->
+        <mat-form-field appearance="outline">
+          <mat-label>2) Address Proof</mat-label>
+          <input matInput [value]="addressProofFileName" placeholder="No file chosen"  required readonly />
+          <button mat-button (click)="addressProofInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #addressProofInput (change)="onFileSelected($event, 'addressProof')"
+          formControlName="addressProof"  name="files" style="display: none;" />
+
+        <!-- Proof of Income -->
+        <mat-form-field appearance="outline">
+          <mat-label>3) Proof of Income</mat-label>
+          <input matInput [value]="proofOfIncomeFileName" placeholder="No file chosen"  readonly required />
+          <button mat-button (click)="proofOfIncomeInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #proofOfIncomeInput (change)="onFileSelected($event, 'proofOfIncome')"
+          formControlName="proofOfIncome"  name="files" style="display: none;" />
+
+      </div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="responsive-inner" *ngIf="certificateForm.get('certificateType')?.value === 'Income'">
+      <div>
+        <p>Select For Year :</p>
+        <select [(ngModel)]="IncomeData.incomeFor" name="incomeFor" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="One Year">One Year</option>
+          <option value="Three Year">Three Year</option>
+        </select>
+      </div>
+      <label for="" class="laste"></label>
+      <h1 class="headline">Beneficiary Information :-</h1>
+
+      <div>
+        <p>Relation Of Applicant:</p>
+        <select [(ngModel)]="IncomeData.relation" name="relation" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="Self">Self</option>
+          <option value="Father">Father</option>
+          <option value="Mother">Mother</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Beneficiary Salutation:</p>
+        <select [(ngModel)]="IncomeData.solutation" name="salutation" [ngModelOptions]="{standalone: true}" aria-placeholder="abnscambcbc">
+          <option value="-">Select</option>
+          <option value="Shree">Shree</option>
+          <option value="Shreemati">Shreemati</option>
+          <option value="So">So</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Beneficiary Name:</p>
+        <input type="text" placeholder="Enter Beneficiary Name" [(ngModel)]="IncomeData.benificaryName" name="beneficiaryName"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div>
+        <p>Income Certificate Reason?</p>
+        <select [(ngModel)]="IncomeData.certiReasion" name="certificateReasion" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="Education">Education</option>
+          <option value="Medicale">Medicale</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <label for="" class="laste"></label>
+
+      <h1 class="headline">Family Farm Income Details :- </h1>
+
+      <div>
+        <p>Account Holder Name:</p>
+        <input type="text" placeholder="Enter Farm Owner Name" [(ngModel)]="IncomeData.farmaccHolderName" name="farmHoldername"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div>
+        <p>Annual Income</p>
+        <input placeholder="Enter {{academicYear1}} Year Total Income"  name="annualIncome" [(ngModel)]="IncomeData.annualIncome"  [ngModelOptions]="{standalone: true}"  />
+      </div>
+
+      <div *ngIf="IncomeData.incomeFor==='Three Year'">
+        <p>Annual Income {{academicYear2}}</p>
+        <input placeholder="Enter {{academicYear2}} Year Total Income"  name="annualsecondIncome" [(ngModel)]="IncomeData.annualsecondIncome"  [ngModelOptions]="{standalone: true}"  />
+      </div>
+
+      <div  *ngIf="IncomeData.incomeFor==='Three Year'">
+        <p>Annual Income Of {{academicYear3}}</p>
+        <input placeholder="Enter {{academicYear3}} Year Total Income"  name="annualThirdIncome" [(ngModel)]="IncomeData.annualThirdIncome"  [ngModelOptions]="{standalone: true}"  />
+      </div> 
+
+
+      <div>
+        <p>Area: </p>
+        <input type="text" placeholder="Enter Area" [(ngModel)]="IncomeData.farmArea" name="farmArea"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+
+
+      <div>
+        <p>Select Area In</p>
+        <select [(ngModel)]="IncomeData.area" name="areaMeasure" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="R">R</option>
+          <option value="Akar">Akar</option>
+          <option value="Hector">Hector</option>
+        </select>
+      </div>
+
+      <label for="" class="laste"></label>
+      <h1 class="headline"> Documents :-</h1>
+
+      <div>
+        <p>1) Identity Proof </p>
+        <input [value]="identityProofFileName" placeholder="No file chosen" required
+          (click)="identityProofInput.click()" readonly>
+      </div>
+
+      <input type="file" #identityProofInput (change)="onFileSelected($event, 'identityProof')"
+        formControlName="identityProof" name="files" style="display: none;" />
+
+      <div>
+        <p>2) Address Proof</p>
+        <input [value]="addressProofFileName" placeholder="No file chosen" required (click)="addressProofInput.click()"
+          readonly>
+      </div>
+      <input type="file" #addressProofInput (change)="onFileSelected($event, 'addressProof')"
+        formControlName="addressProof" name="files" style="display: none;" />
+      <div>
+
+        <p>3) Proof of Income</p>
+        <input [value]="proofOfIncomeFileName" placeholder="No file chosen" required
+          (click)="proofOfIncomeInput.click()" readonly>
+      </div>
+      <input type="file" #proofOfIncomeInput (change)="onFileSelected($event, 'proofOfIncome')"
+        formControlName="proofOfIncome" name="files" style="display: none;" />
+
+    </div>
+
+   
+  </div>
+  <div *ngIf="certificateForm.get('certificateType')?.value === 'Caste'" class="casteDiv">
+
+    <div class="headName">
+      <mat-form-field appearance="outline">
+        <mat-label>Caste Type</mat-label>
+        <mat-select name="casteType" [(ngModel)]="CasteData.casteType" [ngModelOptions]="{standalone: true}">
+          <mat-option value="VJNT">Caste VJNT</mat-option>
+          <mat-option value="OBC">Caste OBC</mat-option>
+          <mat-option value="SC">Caste SC</mat-option>
+          <mat-option value="ST">Caste ST</mat-option>
+          <mat-option value="SBC">Caste SBC</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="casteDiv-1">
+      <h1 class="headline">Beneficiary Information</h1>
+
+      <div class="casteDiv-inner1">
+        <mat-form-field appearance="outline">
+          <mat-label>Relation</mat-label>
+          <mat-select name="relation" [(ngModel)]="CasteData.relation" [ngModelOptions]="{standalone: true}">
+            <mat-option value="Self">Self</mat-option>
+            <mat-option value="Father">Father</mat-option>
+            <mat-option value="Mother">Mother</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Beneficiary Salutation</mat-label>
+          <mat-select name="solutation" [(ngModel)]="CasteData.solutation" [ngModelOptions]="{standalone: true}">
+            <mat-option value="Shree">Shree</mat-option>
+            <mat-option value="Shreemati">Shreemati</mat-option>
+            <mat-option value="So">So</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Beneficiary Name</mat-label>
+          <input matInput name="benificaryName" [(ngModel)]="CasteData.benificaryName"
+            [ngModelOptions]="{standalone: true}" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Gender</mat-label>
+          <mat-select name="gender" [(ngModel)]="CasteData.gender" [ngModelOptions]="{standalone: true}">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="casteDiv-2">
+      <h1 class="headline">Documents</h1>
+
+      <div class="casteDiv-inner1">
+        <!-- Identity Proof -->
+        <mat-form-field appearance="outline">
+          <mat-label>1) Identity Proof</mat-label>
+          <input matInput [value]="identityProofFileName" placeholder="No file chosen" readonly />
+          <button mat-button (click)="identityProofInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #identityProofInput (change)="onFileSelected($event, 'identityProof')"
+          formControlName="identityProof" style="display: none;" />
+
+
+        <!-- Address Proof -->
+        <mat-form-field appearance="outline">
+          <mat-label>2) Address Proof</mat-label>
+          <input matInput [value]="addressProofFileName" placeholder="No file chosen" readonly />
+          <button mat-button (click)="addressProofInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #addressProofInput (change)="onFileSelected($event, 'addressProof')"
+          formControlName="addressProof" style="display: none;" />
+
+        <!-- Birth Certificate or School Leaving Certificate -->
+        <mat-form-field appearance="outline">
+          <mat-label>3) Birth Certificate Or School Leaving Certificate</mat-label>
+          <input matInput [value]="birthOrTcFileName" placeholder="No file chosen" readonly />
+          <button mat-button (click)="birthOrTcInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #birthOrTcInput (change)="onFileSelected($event, 'birthOrTc')" formControlName="birthOrTc"
+          style="display: none;" />
+
+        <!-- Caste Proof -->
+        <mat-form-field appearance="outline">
+          <mat-label>4) Caste Proof</mat-label>
+          <input matInput [value]="casteProofFileName" placeholder="No file chosen" readonly />
+          <button mat-button (click)="casteProofInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #casteProofInput (change)="onFileSelected($event, 'casteProof')" formControlName="casteProof"
+          style="display: none;" />
+      </div>
+    </div>
+
+  </div>
+
+  <div class="responsive">
+    <div class="responsive-inner" *ngIf="certificateForm.get('certificateType')?.value === 'Caste'">
+      <div>
+        <p>Caste Type :</p>
+        <select name="casteType" [(ngModel)]="CasteData.casteType" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select SubCaste</option>
+          <option value="Caste VJNT">Caste VJNT</option>
+          <option value="Caste OBC">Caste OBC</option>
+          <option value="Caste SC">Caste SC</option>
+          <option value="Caste ST">Caste ST</option>
+          <option value="Caste SBC">Caste SBC</option>
+        </select>
+      </div>
+      <label for="" class="laste"></label>
+      <h1 class="headline">Beneficiary Information :-</h1>
+
+      <div>
+        <p>Relation Of Applicant:</p>
+        <select name="relation" [(ngModel)]="CasteData.relation" [ngModelOptions]="{standalone: true}">
+<option value="-">Select Relation With User</option>
+          <option value="Self">Self</option>
+          <option value="Father">Father</option>
+          <option value="Mother">Mother</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Beneficiary Salutation:</p>
+        <select name="solutation" [(ngModel)]="CasteData.solutation" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="Shree">Shree</option>
+          <option value="Shreemati">Shreemati</option>
+          <option value="So">So</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Beneficiary Name:</p>
+        <input type="text" name="benificaryName" placeholder="Enter Beneficiary Name" [(ngModel)]="CasteData.benificaryName"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div>
+        <p>Gender</p>
+        <select name="gender" [(ngModel)]="CasteData.gender" [ngModelOptions]="{standalone: true}">
+          <option value="-"> Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <label for="" class="laste"></label>
+
+      <h1 class="headline"> Documents :-</h1>
+
+      <div>
+        <p>1) Identity Proof </p>
+        <input [value]="identityProofFileName" placeholder="No file chosen" required
+          (click)="identityProofInput.click()" readonly>
+      </div>
+
+      <input type="file" #identityProofInput (change)="onFileSelected($event, 'identityProof')"
+        formControlName="identityProof" name="files" style="display: none;" />
+
+      <div>
+        <p>2) Address Proof</p>
+        <input [value]="addressProofFileName" placeholder="No file chosen" required (click)="addressProofInput.click()"
+          readonly>
+      </div>
+      <input type="file" #addressProofInput (change)="onFileSelected($event, 'addressProof')"
+        formControlName="addressProof" name="files" style="display: none;" />
+      <div>
+
+        <p>3) Birth Certificate Or School <br> <br>Leaving Certificate</p>
+        <input [value]="birthOrTcFileName" placeholder="No file chosen" (click)="birthOrTcInput.click()" readonly>
+      </div>
+      <input type="file" #birthOrTcInput (change)="onFileSelected($event, 'birthOrTc')" formControlName="birthOrTc"
+        name="files" style="display: none;" />
+
+      <div>
+        <p>4) Caste Proof</p>
+        <input [value]="casteProofFileName" placeholder="No file chosen" (click)="casteProofInput.click()" readonly>
+      </div>
+      <input type="file" #casteProofInput (change)="onFileSelected($event, 'casteProof')" formControlName="casteProof"
+        name="files" style="display: none;" />
+    </div>
+  </div>
+
+  <div *ngIf="certificateForm.get('certificateType')?.value === 'Age Nationality and Domicile Certificate'"
+    class="ANDCDiv">
+
+    <div class="headName">
+      <mat-form-field appearance="outline">
+        <mat-label>Certificate Name</mat-label>
+        <mat-select name="certiType" [(ngModel)]="ANADdata.certiType" [ngModelOptions]="{standalone: true}">
+          <mat-option value="Certificate of Age and Domicile">Certificate of Age and Domicile</mat-option>
+          <mat-option value="Certificate of Age, Domicile and Nationality">Certificate of Age, Domicile and
+            Nationality</mat-option>
+          <mat-option value="Certificate of Age and Nationality">Certificate of Age and Nationality</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="ANDCDiv-1">
+      <h1 class="headline">Beneficiary Information</h1>
+      <div class="ANDCDiv-inner1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Relation</mat-label>
+          <mat-select name="relation" [(ngModel)]="ANADdata.relation" [ngModelOptions]="{standalone: true}">
+            <mat-option value="Self">Self</mat-option>
+            <mat-option value="Father">Father</mat-option>
+            <mat-option value="Mother">Mother</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Beneficiary Salutation</mat-label>
+          <mat-select name="solutation" [(ngModel)]="ANADdata.solutation" [ngModelOptions]="{standalone: true}">
+            <mat-option value="Shree">Shree</mat-option>
+            <mat-option value="Shreemati">Shreemati</mat-option>
+            <mat-option value="So">So</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Beneficiary Name</mat-label>
+          <input matInput name="benificaryName" [(ngModel)]="ANADdata.benificaryName"
+            [ngModelOptions]="{standalone: true}" />
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Certificate Reason?</mat-label>
+          <mat-select name="certiReasion" [(ngModel)]="ANADdata.certiReasion" [ngModelOptions]="{standalone: true}">
+            <mat-option value="Shikshan">Shikshan</mat-option>
+            <mat-option value="Vaidyakiya">Vaidyakiya</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Residing at present address since?</mat-label>
+          <mat-select name="residingSince" [(ngModel)]="ANADdata.residingSince" [ngModelOptions]="{standalone: true}">
+            <mat-option value="2024">2024</mat-option>
+            <mat-option value="2023">2023</mat-option>
+            <mat-option value="2022">2022</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="ANDCDiv-2">
+      <h1 class="headline">Documents</h1>
+
+      <div class="ANDCDiv-inner1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Identity Proof</mat-label>
+          <input matInput [value]="identityProofFileName" placeholder="No file chosen" readonly />
+          <button mat-button (click)="identityProofInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #identityProofInput (change)="onFileSelected($event, 'identityProof')"
+          formControlName="identityProof" style="display: none;" />
+
+        <!-- Address Proof -->
+        <mat-form-field appearance="outline">
+          <mat-label>Address Proof</mat-label>
+          <input matInput [value]="addressProofFileName" placeholder="No file chosen" readonly />
+          <button mat-button (click)="addressProofInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #addressProofInput (change)="onFileSelected($event, 'addressProof')"
+          formControlName="addressProof" style="display: none;" />
+
+        <!-- Birth Certificate or School Leaving Certificate -->
+        <mat-form-field appearance="outline">
+          <mat-label>Birth Certificate Or School Leaving Certificate</mat-label>
+          <input matInput [value]="birthOrTcFileName" placeholder="No file chosen" readonly />
+          <button mat-button (click)="birthOrTcInput.click()">Chose a file</button>
+        </mat-form-field>
+        <input type="file" #birthOrTcInput (change)="onFileSelected($event, 'birthOrTc')" formControlName="birthOrTc"
+          style="display: none;" />
+      </div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="responsive-inner"
+      *ngIf="certificateForm.get('certificateType')?.value === 'Age Nationality and Domicile Certificate'">
+      <div>
+        <p>Certificate Name :</p>
+        <select name="certiType" [(ngModel)]="ANADdata.certiType" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select SubCertificate</option>
+          <option value="Certificate of Age and Domicile">Certificate of Age and Domicile</option>
+          <option value="Certificate of Age, Domicile and Nationality">Certificate of Age, Domicile and
+            Nationality</option>
+          <option value="Certificate of Age and Nationality">Certificate of Age and Nationality</option>
+        </select>
+      </div>
+      <label for="" class="laste"></label>
+      <h1 class="headline">Beneficiary Information :-</h1>
+
+      <div>
+        <p>Relation Of Applicant:</p>
+        <select name="relation" [(ngModel)]="ANADdata.relation" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="Self">Self</option>
+          <option value="Father">Father</option>
+          <option value="Mother">Mother</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Beneficiary Salutation:</p>
+        <select name="solutation" [(ngModel)]="ANADdata.solutation" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="Shree">Shree</option>
+          <option value="Shreemati">Shreemati</option>
+          <option value="So">So</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Beneficiary Name:</p>
+        <input type="text" placeholder="Enter Beneficiary Name" name="benificaryName"
+          [(ngModel)]="ANADdata.benificaryName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div>
+        <p>Certificate Reason?</p>
+        <select name="certiReasion" [(ngModel)]="ANADdata.certiReasion" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="Shikshan">Shikshan</option>
+          <option value="Vaidyakiya">Vaidyakiya</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <p>Residing at present <br><br> address since?</p>
+        <select name="residingSince" [(ngModel)]="ANADdata.residingSince" [ngModelOptions]="{standalone: true}">
+          <option value="-">Select</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+        </select>
+      </div>
+      <label for="" class="laste"></label>
+
+      <h1 class="headline"> Documents :-</h1>
+
+      <div>
+        <p>1) Identity Proof </p>
+        <input [value]="identityProofFileName" placeholder="No file chosen" required
+          (click)="identityProofInput.click()" readonly>
+      </div>
+
+      <input type="file" #identityProofInput (change)="onFileSelected($event, 'identityProof')"
+        formControlName="identityProof" name="files" style="display: none;" />
+
+      <div>
+        <p>2) Address Proof</p>
+        <input [value]="addressProofFileName" placeholder="No file chosen" required (click)="addressProofInput.click()"
+          readonly>
+      </div>
+      <input type="file" #addressProofInput (change)="onFileSelected($event, 'addressProof')"
+        formControlName="addressProof" name="files" style="display: none;" />
+      <div>
+
+        <p>3) Birth Certificate Or School <br> <br>Leaving Certificate</p>
+        <input [value]="birthOrTcFileName" placeholder="No file chosen" (click)="birthOrTcInput.click()" readonly>
+      </div>
+      <input type="file" #birthOrTcInput (change)="onFileSelected($event, 'birthOrTc')" formControlName="birthOrTc"
+        name="files" style="display: none;" />
+    </div>
+  </div>
+
+  <div class="button" *ngIf="income || caste || anad">
+    <button id="uploadButton" (click)="onUpload()" >Upload Files</button>
+  </div>
+
+<br>
+  <button *ngIf="isOk" class="submit-button" (click)="onSubmit()">Submit Form</button>
+</form>

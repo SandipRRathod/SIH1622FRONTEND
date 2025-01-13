@@ -1,0 +1,373 @@
+#maindetails .pdetails {
+   border: 1px solid rgb(249, 249, 249);
+   background: transparent;
+   border-radius: 10px;
+}
+
+#maindetails .pdetails .heading {
+   border: 1px solid rgb(223, 187, 187);
+   border-radius: 10px;
+   border-bottom-right-radius: 0px;
+   border-bottom-left-radius: 0px;
+   height: 35px;
+   font-size: 20px;
+   padding-top: 13px;
+   padding-left: 20px;
+   text-align: start;
+}
+
+#maindetails .pdetails .field {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: column;
+   padding: 20px;
+}
+
+
+#maindetails .pdetails .field .row1,
+#maindetails .pdetails .row2,
+#maindetails .pdetails .row3 {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   flex-direction: row;
+   color: whitesmoke;
+}
+
+#maindetails .pdetails .field .row1 input,
+#maindetails .pdetails .row2 input,
+#maindetails .pdetails .row3 input {
+   min-width: 170px;
+   height: 25px;
+   color: whitesmoke;
+}
+
+#maindetails .pdetails .field .row1 input::placeholder,
+#maindetails .pdetails .row2 input::placeholder,
+#maindetails .pdetails .row3 input::placeholder {
+   color: whitesmoke;
+}
+
+#maindetails .pdetails .field .row1 mat-label,
+#maindetails .pdetails .row2 mat-label,
+#maindetails .pdetails .row3 mat-label {
+
+   color: whitesmoke;
+}
+
+.date {
+   width: 21%;
+}
+
+#maindetails .addres {
+   margin-top: 10px;
+   border: 1px solid rgb(227, 192, 192);
+border-radius: 10px;
+}
+
+#maindetails .addres .heading {
+   border: 1px solid rgb(236, 218, 218);
+   border-radius: 10px;
+   border-bottom-right-radius: 0px;
+   border-bottom-left-radius: 0px;
+   height: 35px;
+   font-size: 20px;
+   padding-top: 13px;
+   padding-left: 20px;
+   text-align: start;
+}
+
+#maindetails .addres .field {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: column;
+   padding: 20px;
+}
+
+#maindetails .addres .field .row1,
+.row2 {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   flex-direction: row;
+}
+
+#maindetails .addres .field .row1 input,
+#maindetails .addres .field .row2 input,
+#maindetails .addres .field .row3 input {
+   min-width: 170px;
+   height: 25px;
+   color: whitesmoke;
+}
+
+#maindetails .addres .field .row1 mat-label,
+#maindetails .addres .field .row2 mat-label,
+#maindetails .addres .field .row3 mat-label {
+
+   color: whitesmoke;
+}
+
+button {
+   margin: 10px;
+   width: 50%;
+   height: 40px;
+   font-size: 20px;
+   border-radius: 7px;
+}
+
+button a {
+   color: black;
+   text-decoration: none;
+}
+
+button:hover {
+   background-color: rgb(211, 153, 153);
+   color: white;
+}
+
+
+
+
+
+
+.responsive-main {
+   display: none;
+}
+
+
+
+.responsive-main .responsive-inner {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   margin: auto;
+   padding: 20px;
+   gap: 15px;
+   border: 2px solid rgb(168, 138, 102);
+   border-radius: 10px;
+}
+
+.responsive-main .responsive-inner label{
+   display: flex;
+flex-direction: column;
+gap: 25px;
+}
+
+ input ,select{
+   width: 80%;
+   padding: 10px;
+   font-size: 20px;
+   box-sizing: border-box;
+   outline: none;
+   margin: auto;
+   background-color: white;
+   color: white;
+   border-radius: 5px;
+   border: none;
+}
+
+
+
+
+
+@media screen and (min-width:200px) and (max-width:480px) {
+
+   #maindetails {
+      display: none;
+   }
+
+   .pdetails .heading,
+   .addres .heading {
+      font-size: 45px;
+      height: 50px;
+      padding-top: 30px;
+      border-radius: 5px;
+   }
+
+   .pdetails .field .row1,
+   .row2,
+   .row3 {
+      /* background-color: red; */
+      width: 98%;
+      flex-direction: column;
+   }
+
+   .pdetails .field .row1 mat-form-field {
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+      /* background-color: red; */
+      width: 99%;
+   }
+
+   .pdetails .field .row1 mat-form-field mat-label {
+      font-size: 60px;
+   }
+
+
+
+   .pdetails .field .row1 mat-form-field input {
+      font-size: 60px;
+      margin-top: 18px;
+      width: 100%;
+      height: 100px;
+   }
+
+
+
+   .pdetails .field .row2 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+
+   }
+
+   .pdetails .field .row2 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .pdetails .field .row2 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   .pdetails .field .row2 mat-form-field mat-error {
+      font-size: 30px;
+      margin-top: 12px;
+   }
+
+
+   .pdetails .field .row2 mat-form-field mat-select {
+      height: 70px;
+      font-size: 35px;
+      position: relative;
+      top: 25px;
+   }
+
+   mat-option {
+      font-size: 35px;
+      margin-top: 10px;
+      padding: 10px;
+   }
+
+   .pdetails .field .row3 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+
+   }
+
+   .pdetails .field .row3 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .pdetails .field .row3 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   .pdetails .field .row3 mat-form-field mat-select {
+      height: 70px;
+      font-size: 35px;
+      position: relative;
+      top: 24px;
+   }
+
+
+   .addres .field .row1 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+   }
+
+   .addres .field .row1 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .addres .field .row1 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   .addres .field .row2 mat-form-field {
+      width: 44%;
+      height: 120px;
+      padding: 25px;
+      margin: 7px;
+
+   }
+
+   .addres .field .row2 mat-form-field mat-label {
+      font-size: 37px;
+      position: relative;
+      bottom: 5px;
+   }
+
+   .addres .field .row2 mat-form-field input {
+      font-size: 38px;
+      margin-top: 18px;
+   }
+
+   mat-datepicker-toggle {
+      visibility: hidden;
+   }
+
+
+   button {
+      font-size: 70px;
+      height: 100px;
+      width: 60%;
+      border-radius: 30px;
+      margin-top: 4%;
+   }
+
+   button:hover {
+      background-color: rgb(211, 153, 153);
+      color: white;
+   }
+
+   .responsive-main {
+      display: block;
+   }
+
+
+   .responsive-main .responsive-inner {
+      width: 90%;
+      gap: 20px;
+   }
+   .responsive-main .responsive-inner label{
+      padding: 10px;
+   }
+   .responsive-main .responsive-inner label span {
+      font-size: 50px;
+      margin-top: 2%;
+      text-align: left;
+      margin-left: 7%;
+   }
+
+   .responsive-main .responsive-inner label input ,select {
+      width: 85%;
+      margin-top: 1%;
+      height: 100px;
+      font-size: 50px;
+      padding: 20px;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+   }
+
+
+
+
+}

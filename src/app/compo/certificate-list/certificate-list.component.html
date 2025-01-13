@@ -1,0 +1,46 @@
+<app-pdetails></app-pdetails>
+<br>
+<h2> Current Applied And Histroy of Certificates </h2>
+
+<div class="main-div"> 
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Column 1 -->
+    <ng-container matColumnDef="column1">
+      <th mat-header-cell *matHeaderCellDef>Application ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.applicationId}} </td>
+    </ng-container>
+  
+    <!-- Column 2 -->
+    <ng-container matColumnDef="column2">
+      <th mat-header-cell *matHeaderCellDef>Applicant Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.applicantName}}</td>
+    </ng-container>
+  
+    <!-- Column 3 -->
+    <ng-container matColumnDef="column3">
+      <th mat-header-cell *matHeaderCellDef> Certificate Name </th>
+      <td mat-cell *matCellDef="let element">{{element.certiName}}</td>
+    </ng-container>
+  
+    <!-- Column 4  -->
+    <ng-container matColumnDef="column4">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element"> {{element.certiStatus}}
+        &nbsp;&nbsp;<button *ngIf="element.certiStatus=='Approved'" (click)="download(element.applicationId,element.applicantName,element.certiName)">Download</button>
+      </td>
+    </ng-container>
+  
+  
+    <!-- Column 5  -->
+    <ng-container matColumnDef="column5">
+      <th mat-header-cell *matHeaderCellDef>Rejection Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.rejectionStatus}}</td>
+    </ng-container>
+  
+  
+    <!-- Header and Row definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+</div>

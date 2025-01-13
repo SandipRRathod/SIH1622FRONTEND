@@ -1,0 +1,28 @@
+
+button{
+    width: fit-content;
+    height: 25px;
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(226, 197, 122, 0.897);
+    color: whitesmoke;
+}
+@media screen and (min-width:200px) and (max-width:400px) {
+    h3{
+        font-size: 46px;
+        line-height: 80px;
+    }
+ 
+    button{
+      width: 30%;
+      margin-top: 10%;
+      font-size: 50px;
+      height: 80px;
+    }
+}

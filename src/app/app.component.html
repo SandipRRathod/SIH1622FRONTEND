@@ -1,0 +1,65 @@
+<!-- Progress Spinner -->
+<div *ngIf="isLoading" class="loading-overlay">
+  <mat-spinner [diameter]="60"></mat-spinner> &nbsp;
+  <p>Proccesing....</p>
+</div>
+
+<!-- Mat Toolbar For Header Of Application -->
+<mat-toolbar>
+  <button mat-icon-button (click)="toggleDrawer(drawer)" class="btn1"><mat-icon>menu</mat-icon></button>
+
+  <nav>
+    <h1 class="wrap-text">Online issuance of Caste and other certificates by Revenue Department need real-time
+      monitoring</h1>
+  </nav>
+  <button mat-icon-button (click)="logout()" class="btn2"><mat-icon>logout</mat-icon></button>
+
+</mat-toolbar>
+<!-- mat-drawer-container divided into two sub namly mat-drawer and mat-drawer-content -->
+<mat-drawer-container>
+
+  <!--  mat-drawer sidebar -->
+  <mat-drawer #drawer *ngIf="isAuthenticated" [opened]="draweropend" [mode]="drawerMode" class="main-container">
+
+    <mat-nav-list>
+
+      <mat-list-item>
+        <button mat-icon-button><mat-icon>person</mat-icon><a routerLink="/profile">Profile</a></button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-icon-button><mat-icon>task_alt</mat-icon>
+          <a routerLink="/apply">Apply For Certificate</a></button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-icon-button><mat-icon>search</mat-icon><a routerLink="/track">Track Application</a></button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-icon-button><mat-icon>settings</mat-icon><a routerLink="/settings">Setting</a></button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-icon-button><mat-icon>help</mat-icon><a routerLink="/help">Help</a></button>
+      </mat-list-item>
+
+      <mat-list-item class="Logout-button">
+        <button mat-icon-button><mat-icon>logout</mat-icon><a class="logout-a" (click)="logout()">Logout</a></button>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- Content of the aplicaton dynamicaly when click on routs -->
+  <mat-drawer-content>
+    <div class="content">
+
+      <!-- dynamic contaent shower -->
+      <router-outlet>
+
+      </router-outlet>
+    </div>
+
+  </mat-drawer-content>
+
+</mat-drawer-container>
+
+<!-- footer -->
+<app-footer></app-footer>

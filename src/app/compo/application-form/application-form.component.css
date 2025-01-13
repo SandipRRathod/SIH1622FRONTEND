@@ -1,0 +1,418 @@
+form .main {
+    width: 50%;
+    color: white;
+}
+
+mat-form-field {
+    width: 40%;
+    color: white;
+}
+
+mat-form-field input {
+    width: 100%;
+    color: white;
+}
+
+
+form mat-form-field mat-label,mat-select,form mat-form-field input{
+    color: white;
+}
+
+
+.btn {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(37, 42, 45);
+    background-color: rgb(18, 235, 235);
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+
+form div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+form div mat-form-field {
+    width: 28%;
+    color: white;
+}
+
+
+.headName {
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid black;
+    color: white;
+}
+
+.incomeDiv {
+    height: auto;
+    width: 100%;
+    border: 1px solid green;
+    border-radius: 10px;
+}
+
+.incomeDiv .incomeDiv-1 {
+    width: 89%;
+    height: auto;
+    border-bottom: 1px solid black;
+}
+
+.headline {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+.incomeDiv .incomeDiv-1 .incomeDiv-inner1 mat-form-field {
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+color: white;
+}
+
+
+.incomeDiv .incomeDiv-2 {
+    width: 89%;
+    height: auto;
+    border-bottom: 1px solid black;
+}
+
+.incomeDiv .incomeDiv-2 .incomeDiv-inner1 mat-form-field {
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.incomeDiv .incomeDiv-3 {
+    width: 89%;
+    height: auto;
+}
+
+.incomeDiv .incomeDiv-3 .incomeDiv-inner1 mat-form-field {
+    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+
+}
+
+
+
+
+.casteDiv {
+    height: auto;
+    width: 100%;
+    border: 1px solid green;
+    border-radius: 10px;
+}
+
+
+
+.casteDiv .casteDiv-1 {
+    width: 89%;
+    height: auto;
+    border-bottom: 1px solid black;
+}
+
+
+.casteDiv .casteDiv-1 .casteDiv-inner1 mat-form-field {
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+
+.casteDiv .casteDiv-2 {
+    width: 89%;
+    height: auto;
+}
+
+.casteDiv .casteDiv-2 .casteDiv-inner1 mat-form-field {
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.ANDCDiv {
+    height: auto;
+    width: 100%;
+    border: 1px solid green;
+    border-radius: 10px;
+}
+
+
+
+.ANDCDiv .ANDCDiv-1 {
+    width: 89%;
+    height: auto;
+    border-bottom: 1px solid black;
+}
+
+
+.ANDCDiv .ANDCDiv-1 .ANDCDiv-inner1 mat-form-field {
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+
+.ANDCDiv .ANDCDiv-2 {
+    width: 89%;
+    height: auto;
+}
+
+.ANDCDiv .ANDCDiv-2 .ANDCDiv-inner1 mat-form-field {
+    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+
+form .button {
+    margin-top: 10px;
+    width: 90%;
+    height: 30px;
+}
+
+#uploadButton {
+    position: relative;
+    left: 40%;
+ height: 26px;
+ font-size: 16px;
+ font-weight: bold;
+ border-radius: 6px;
+ border:none;
+ color: rgb(47, 46, 48);
+}
+
+#uploadButton:hover{
+    background-color: rgba(102, 0, 133, 120);
+color: white;
+}
+.submit-button{
+    height: 26px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    border:none;
+}
+
+.submit-button:hover{
+    background-color: rgba(192, 133, 133, 220);
+    color: white;
+    }
+
+form .responsive {
+    display: none;
+}
+
+
+
+form .responsive .responsive-inner {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    gap: 15px;
+    border: 2px solid rgb(168, 138, 102);
+    border-radius: 10px;
+}
+
+form .responsive .responsive-inner label p {
+    font-size: 20px;
+    position: relative;
+    right: 25%;
+}
+
+form .responsive .responsive-inner div input {
+    width: 80%;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+}
+
+ .responsive-main select {
+    display: none;
+}
+
+
+@media screen and (min-width:200px) and (max-width:480px) {
+
+
+    form .main,
+    form .incomeDiv,
+    form .casteDiv,
+    form .ANDCDiv {
+        display: none;
+    }
+
+    .responsive-main {
+        margin-top: 5%;
+    }
+
+    form .responsive {
+        display: block;
+    }
+
+    form .responsive .responsive-inner {
+        width: 95%;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    form .responsive .responsive-inner label p {
+        font-size: 50px;
+        position: relative;
+        right: 34%;
+        top: 30px;
+    }
+
+    form .responsive .responsive-inner label input {
+        width: 50%;
+        height: 100px;
+        font-size: 40px;
+        padding: 20px;
+        position: relative;
+        bottom: 40px;
+        left: 25%;
+        border: 2px solid whitesmoke;
+        font-weight: bold;
+        background-color: white;
+        color: black;
+    }
+
+    form .responsive .responsive-inner div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    form .responsive .responsive-inner div p {
+        font-size: 40px;
+        text-align: center;
+        align-content: center;
+        padding: 10px;
+    }
+
+    .firstE {
+        border-top: 2px solid whitesmoke;
+    }
+
+    .laste {
+        border-bottom: 2px solid whitesmoke;
+    }
+
+    .headline {
+        font-size: 55px;
+    }
+
+    form .responsive .responsive-inner div select {
+        width: 50%;
+        margin-top: 10px;
+        margin-right: 2%;
+        height: 110px;
+        font-size: 40px;
+        padding: 20px;
+        outline: none;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    form .responsive .responsive-inner div input {
+        width: 46%;
+        margin: 0;
+        margin-top: 10px;
+        margin-right: 2%;
+        height: 59px;
+        font-size: 40px;
+        padding: 20px;
+        outline: none;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    .responsive-inner div select option {
+        font-size: 10px;
+        background-color: rgb(134, 130, 130);
+
+    }
+
+    .responsive-main select {
+        display: block;
+    }
+
+    form .responsive-main select {
+        width: 60%;
+        height: 110px;
+        font-size: 55px;
+        padding: 20px;
+        outline: none;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        background-color: white;
+        color: white;
+        font-weight: bold;
+      
+    }
+
+    .responsive-main select option {
+        font-size: 10px;
+        background-color: rgb(134, 130, 130);
+
+    }
+
+
+    #uploadButton {
+        margin-top: 4%;
+        height: 60px;
+        width: 30%;
+        font-size: 40px;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+
+    .submit-button {
+        height: 100px;
+        width: 60%;
+        font-size: 65px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border-radius: 20px;
+        margin-top: 9%;
+        color: grey;
+    }
+
+    .submit-button:hover {
+        background-color: cadetblue;
+        color: whitesmoke;
+    }
+}

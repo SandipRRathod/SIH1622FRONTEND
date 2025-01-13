@@ -1,0 +1,189 @@
+.main .contact {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: auto;
+}
+
+.main .contact div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ::ng-deep .snackbar {
+    --mdc-snackbar-container-color:white;
+    --mdc-snackbar-supporting-text-color:black;
+  } */
+
+.image img {
+    width: 600px;
+    height: fit-content;
+    border-radius: 40px;
+}
+
+.image p{
+    font-size: 20px;
+    margin-top: 5%;
+}
+
+.feedback {
+    width: 80%;
+    margin: auto;
+}
+
+.feedback form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.feedback form div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+}
+
+.feedback form div label {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.feedback form div label span {
+    width: fit-content;
+    font-size: 16px;
+}
+
+.feedback form div label input {
+    width: 85%;
+    padding: 5px;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+.feedback form div label textarea{
+   width:auto;
+   min-width: 102.5%;
+   min-height: 25px;
+   font-size: 16px;
+   outline: none;
+   border-radius: 5px;
+   font-weight: bold;
+   padding: 5px;
+}
+
+
+
+.feedback form div button{
+    margin: auto;
+    width: fit-content;
+    min-width: 10%;
+    height: 25px;
+    font-size: 15px;
+    border: none;
+    border-radius:5px ;
+    font-weight: bold;
+}
+
+.feedback form div button:hover{
+    background-color: rgb(100, 188, 100);
+    color: white;
+}
+
+
+@media screen and (min-width:200px) and (max-width:480px) {
+    .image img {
+        width: 95%;
+        height: fit-content;
+    }
+
+
+    .feedback {
+        width: 98%;
+        padding: 15px;
+    }
+    
+    .feedback form {
+        width: 97%;
+    }
+    .feedback form h2{
+        padding: 40px;
+        font-size: 70px;
+        margin-top: 4%;
+    }
+    .feedback form div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 98%;
+        margin-top:5%;
+        gap: 60px;
+        padding: 15px;
+    }
+    
+    .feedback form div label {
+        width: 98%;
+        flex-direction: column;
+        gap: 70px;
+        margin: auto;
+    }
+    
+    .feedback form div label span {
+        width: fit-content;
+        font-size: 56px;
+        margin-left: 10%;
+    }
+    
+    .feedback form div label input {
+        width: 90%;
+        height: 90px;
+        font-size: 56px;
+        margin: auto;
+    }
+
+    .div{
+        margin-top: 4%;
+    }
+
+    
+    
+    .feedback form div label textarea{
+       width:90%;
+       min-width: 80%;
+       height: auto;
+       font-size: 56px;
+       padding: 5px;
+       margin: auto;
+    }
+    
+
+    .feedback form div button{
+        min-width: 30%;
+        height: 75px;
+        border-radius: 20px;
+        font-size: 65px;      
+    }
+
+    .image p{
+        font-size: 70px;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+
+    /* ::ng-deep .snackbar {
+    } */
+}

@@ -1,0 +1,60 @@
+<div class="main">
+    <h1>Register</h1>
+    <form>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Email/Phone</mat-label>
+                <input matInput [(ngModel)]="data.userEmailOrPhone" name="userEmailOrPhone" [formControl]="form"
+                    required>
+                @if(form.hasError('required')){
+                <mat-error><strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput [(ngModel)]="data.userPassword" name="userPassword" (ngModelChange)="validateInput()"
+                    required>@if(form.hasError('required')){
+                <mat-error>Password is <strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput [(ngModel)]="data.userPassword" name="userConfirmPassword" required>
+            </mat-form-field>
+        </div>
+        <button type="submit" (click)="register()">Register</button>
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </form>
+</div>
+
+<br><br>
+<div class="responsive-main">
+
+
+    <div class="responsive-inner">
+        <h1>Register</h1>
+        <label>
+            <p> Email/Phone : </p>
+            <input type="text" placeholder="Enter Email/Phone" [(ngModel)]="data.userEmailOrPhone" required>
+        </label>
+        <label>
+            <p> Password : </p>
+            <input type="text" placeholder="Enter Password" [(ngModel)]="data.userPassword" required>
+        </label>
+
+        <label>
+            <p> Confirm Password : </p>
+            <input type="text" placeholder="Same As Password" [(ngModel)]="data.userPassword">
+        </label>
+        <button type="submit" (click)="register()">Register</button><br>
+
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
+
+
+    </div>
+
+   

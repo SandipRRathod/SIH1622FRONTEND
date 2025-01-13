@@ -1,0 +1,60 @@
+<!-- <p>certificate-tracking works!</p> -->
+<div class="container">
+  <h2>Track Your Application</h2>
+  <form >
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Tracking ID</mat-label>
+        <input matInput id="trackingId" [(ngModel)]="trackingId" [ngModelOptions]="{standalone: true}"
+          placeholder="Enter Application ID" required />
+      </mat-form-field>
+
+      <div class="responsive">
+        <input type="text"
+        [(ngModel)]="trackingId" [ngModelOptions]="{standalone: true}"
+          placeholder="Enter Application ID"
+        required>
+      </div>
+
+    </div>
+    <button mat-raised-button type="submit" (click)="trackApplication(trackingId)">Track</button>
+  </form>
+</div>
+
+
+
+<table *ngIf="ispresent" class="mat-elevation-z8">
+  <caption>
+    <h3>Application Details</h3>
+  </caption>
+  <tr class="HeadRow">
+
+    <div>
+      <th>Applicant Name</th>
+    </div>
+    <div>
+      <th>Certificate Type</th>
+    </div>
+    <div>
+      <th>Status</th>
+    </div>
+  </tr>
+
+
+  <tr class="HeadRow">
+
+    <div>
+      <td> {{ application.applicantName }}</td>
+    </div>
+    <div>
+      <td> {{ application.certiName }}</td>
+    </div>
+    <div>
+      <td> {{ application.certiStatus  }}</td>
+    </div>
+
+
+  </tr>
+
+</table>
+

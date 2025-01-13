@@ -1,0 +1,106 @@
+.mat-elevation-z8 {
+    display: block;
+    overflow: scroll;
+    padding: 40px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: transparent;
+  
+}
+
+
+.mat-elevation-z8 th,td {
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    /* border: 1px solid rgb(248, 185, 185); */
+    text-align: center;
+    color: whitesmoke;
+  }
+
+.mat-elevation-z8::-webkit-scrollbar {
+    width: 0.5px;
+}
+
+.mat-elevation-z8 td button a{
+   text-decoration: none;
+   color: black;
+}
+
+.mat-elevation-z8 td a{
+    text-decoration: none;
+ }
+
+
+h1 span {
+    color: white;
+    border-radius: 5px;
+}
+
+h1 mat-icon {
+    position: relative;
+    top: 2.5px;
+}
+
+.logout-button {
+    display: none;
+}
+
+
+
+
+@media screen and (min-width:200px) and (max-width:480px) {
+
+    h1 span {
+        font-size: 55px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    h1 mat-icon {
+        font-size: 55px;
+        width: 50px;
+        height: 50px;
+    }
+
+    
+    
+    .mat-elevation-z8 th,td {
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+        font-size: 40px;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .mat-elevation-z8 td button{
+        font-size: 40px;
+        width: 90%;
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+     }
+
+    .logout-button {
+        display: block;
+        height: 50px;
+        width: 50%;
+        margin: 40px 40px 100px 25%;
+    }
+
+    .logout-button button {
+        height: 80px;
+        width: 80%;
+        font-size: 60px;
+        border-radius: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-top: 20px;
+    }
+
+    .logout-button button mat-icon {
+        font-size: 50px;
+        padding-top: 10px;
+        height: 50px;
+        width: 50px;
+    }
+
+
+}

@@ -1,0 +1,40 @@
+<div>
+    <div class="field">
+        <mat-form-field >
+            <span>Account</span>
+            <mat-select>
+                <mat-option><a routerLink="/edit">Edit Personal Details </a><mat-icon>edit</mat-icon>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <span>Security</span>
+            <mat-select>
+                <mat-option>
+                    <a routerLink="/changeusername">Change Username</a><mat-icon>edit</mat-icon>
+                </mat-option>
+                <mat-option>
+                    <a routerLink="/changepass">Change Password</a> <mat-icon>edit</mat-icon>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="responsive">
+        <select (change)="onNavigate($event)">
+          <option value="Account">Account</option>
+          <option value="/edit">Edit Personal Details</option>
+        </select>
+        
+        <select (change)="onNavigate($event)">
+          <option value="Security">Security</option>
+          <option value="/changeusername">Change Email</option>
+          <option value="/changepass">Change Password</option>
+        </select>
+      </div>
+
+    <div class="logout" (click)="logout()"><span>Logout</span><mat-icon>logout</mat-icon></div>
+
+   
+
+</div>

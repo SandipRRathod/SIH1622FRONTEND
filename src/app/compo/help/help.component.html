@@ -1,0 +1,51 @@
+<div class="main">
+
+    <div class="feedback">
+
+        <form action="">
+            <h2>Feedback / Complaint</h2>
+            
+            <div>
+                <label for="">
+                    <span>Full Name
+                        :-</span>
+                    <input type="text" name="userFName" id="" placeholder="Enter Name" [(ngModel)]="data.userFName" >
+                </label>
+                <label for="">
+                    <span> Email Address :-</span>
+                    <input type="text" name="userEmail" id="" placeholder="Enter Email Address" [(ngModel)]="data.userEmail">
+                </label>
+            </div>
+            <div class="div">
+                <label for="">
+                    <span>Phone Number :-</span>
+                    <input type="text" placeholder="Enter Phone Number" name="userMN" [(ngModel)]="data.userMN" >
+                </label>
+                <label for="">
+                    <span>Subject :-
+                    </span>
+                    <input type="text" placeholder="Enter Subject Or Reasion" name="subject" [(ngModel)]="data.subject">
+                </label>
+            </div>
+
+            <div class="div">
+                <label for="">
+                    <span>Message :-
+                    </span>
+                    <textarea placeholder="Enter Massage In Detail......." name="massage" [(ngModel)]="data.massage"></textarea>
+
+                </label>
+            </div>
+            <div>
+                <button type="button" (click)="Send()">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+    <div class="image">
+        <p>Flow Of Application</p>
+        <img src="/assets/project/NoteGPT_Flowchart_1732543563065.png" alt="Flow Of Application">
+    </div>
+
+</div>

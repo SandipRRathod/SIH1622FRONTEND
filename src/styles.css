@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body 
+{ 
+    height: 100%; 
+   width: 100%;
+   
+}
+body { margin: 0; 
+    font-family: Roboto,
+     "Helvetica Neue", sans-serif; 
+     background-image: url('assets/project/background-image.jpeg.jpg');
+background-size: cover;
+}
+.app-root{
+    width: auto;
+    height: auto;
+}
+
+.mat-mdc-snack-bar-container{
+margin-left: -20% !important;
+}
+  .mat-mdc-snack-bar-container .mdc-snackbar__label{
+    color: black !important;
+    font-size: 16px !important;
+  }
+  .mat-mdc-snack-bar-container .mdc-snackbar__surface button{
+    font-size:  16px !important;
+}
+
+  .mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color:white !important;
+}
+
+  /* styles.css */
+
+/* Customize the Swal modal container */
+.swal2-popup {
+  background-color: #f9f9f9 !important; /* Background color */
+  border-radius: 12px !important; /* Rounded corners */
+  border: 1px solid #ddd !important; /* Border style */
+}
+
+/* Customize the title */
+.swal2-title {
+  color: #4caf50 !important; /* Title text color */
+  font-size: 17px !important; /* Title font size */
+  font-weight: bold !important; /* Title bold */
+}
+
+/* Customize the text */
+.swal2-html-container {
+  color: #666 !important; /* Text color */
+  font-size: 14px !important; /* Text size */
+}
+
+/* Customize the Confirm button */
+.swal2-confirm {
+  background-color: #4caf50 !important; /* Confirm button color */
+  color: #fff !important; /* Button text color */
+  font-size: 14px !important;
+  border-radius: 8px !important;
+}
+
+
+
+@media screen and (min-width:200px) and (max-width:480px){
+    body { margin: 0; 
+        font-family: Roboto,
+         "Helvetica Neue", sans-serif; 
+         background-image: url('assets/project/BgForSmallScreen.jpg');
+    background-size: 400%;
+    }
+
+    .mat-mdc-snack-bar-container{
+        margin: 2% !important;
+        margin-top: 3% !important;
+        
+    }
+
+    .mat-mdc-snack-bar-container .mdc-snackbar__surface {
+        height: 165px !important;
+        padding: 20px;
+    }
+
+    .mat-mdc-snack-bar-container .mdc-snackbar__surface button{
+        font-size:  70px !important;
+    }
+    .mat-mdc-snack-bar-container .mdc-snackbar__label{
+        font-size: 65px !important;
+      }
+
+      .swal2-popup {
+       height: 200vh;
+       width: 95%;
+      }
+
+      .swal2-icon{
+        font-size: 40px;
+      }
+
+      .swal2-title {
+        font-size: 60px !important;
+        line-height: 100px !important;
+      }
+
+      .swal2-html-container {
+        font-size: 50px !important;
+      }
+
+      .swal2-confirm {
+       font-size: 40px !important;
+      }
+
+      .swal2-deny {
+        font-size: 40px !important;
+       }
+
+      .swal2-timer-progress-bar {
+        height: 10px !important; 
+      }
+}
+
+
